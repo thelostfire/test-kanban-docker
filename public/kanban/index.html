@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kanban</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <h1>Kanban Board</h1>
+
+        <button id="addTaskBtn">Ajouter une tâche</button>
+
+        <div id="board">
+            <div class="column" data-status="todo">
+                <h2>À faire</h2>
+                <div class="tasks" id="todo"></div>
+            </div>
+
+            <div class="column" data-status="doing">
+                <h2>En cours</h2>
+                <div class="tasks" id="doing"></div>
+            </div>
+
+            <div class="column" data-status="done">
+                <h2>Terminé</h2>
+                <div class="tasks" id="done"></div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="modalOverlay" class="modal-overlay hidden">
+            <div class="modal">
+                <h2>Créer une tâche</h2>
+
+                <label for="taskTitle">Titre</label>
+                <input type="text" id="taskTitle">
+
+                <label for="taskDesc">Description</label>
+                <textarea id="taskDesc"></textarea>
+
+                <label for="taskPriority">Priorité</label>
+                <select id="taskPriority">
+                    <option value="low">Basse</option>
+                    <option value="medium" selected>Moyenne</option>
+                    <option value="high">Haute</option>
+                </select>
+
+                <div class="modal-buttons">
+                    <button id="cancelBtn" class="cancel">Annuler</button>
+                    <button id="createBtn" class="create">Créer</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
